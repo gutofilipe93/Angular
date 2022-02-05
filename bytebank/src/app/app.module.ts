@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { ExtratoComponent } from './extrato/extrato.component';
 import { registerLocaleData } from '@angular/common';
 import locatePt from '@angular/common/locales/pt';
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(locatePt,'pt');
 
@@ -18,7 +19,8 @@ registerLocaleData(locatePt,'pt');
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [{
     provide: LOCALE_ID,

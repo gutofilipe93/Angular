@@ -6,8 +6,10 @@
         <app-mensagem *ngIf="campoUsuario.invalid && campoUsuario.touched" mensagem = "Usuário deve ser informado"></app-mensagem>
     </div>
     <div class="form-group">
-        <input type="password" class="form-control" placeholder="Senha" [(ngModel)] = "senha" name="senha" #campoSenha ="ngModel" required />        
+        <input type="password" class="form-control" placeholder="Senha" [(ngModel)] = "senha" name="senha" #campoSenha ="ngModel" required />
         <app-mensagem *ngIf="campoSenha.invalid && campoSenha.touched" mensagem="Senha deve ser informada"></app-mensagem>
     </div>
     <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary btn-block col-md-12">Login</button>
 </form>
+
+<p>Nao é usuário? <a [routerLink]="['novousuario']">Se cadastre</a></p>

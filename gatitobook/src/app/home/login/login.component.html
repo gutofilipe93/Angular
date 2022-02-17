@@ -1,7 +1,7 @@
 <h4 class="text-center">Login</h4>
 
 <form class="form mt-4" (ngSubmit)="logar()" #loginForm="ngForm" >
-    <div class="form-group col-md-12">
+    <div class="form-group">
         <input type="text" class="form-control" placeholder="Nome do usuário" [(ngModel)] = "usuario" name="usuario" #campoUsuario = "ngModel" required />
         <app-mensagem *ngIf="campoUsuario.invalid && campoUsuario.touched" mensagem = "Usuário deve ser informado"></app-mensagem>
     </div>

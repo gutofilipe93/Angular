@@ -3,9 +3,9 @@
 <form class="form mt-4" [formGroup]="novoUsuarioForm" (ngSubmit)="cadastrar()">
   <div class="form-group">
     <input type="text" placeholder="Email" class="form-control" formControlName="email">
-    <app-mensagem mensagem="E-mail obrigatório" 
+    <app-mensagem mensagem="E-mail obrigatório"
     *ngIf="novoUsuarioForm.get('email')?.errors?.required && novoUsuarioForm.get('email')?.touched"></app-mensagem>
-    <app-mensagem mensagem="E-mail no formato incorreto" 
+    <app-mensagem mensagem="E-mail no formato incorreto"
     *ngIf="novoUsuarioForm.get('email')?.errors?.email && novoUsuarioForm.get('email')?.touched"></app-mensagem>
   </div>
 
@@ -16,14 +16,17 @@
 
   <div class="form-group">
     <input type="text" placeholder="Usuário" name="usuario" id="usuario" class="form-control" formControlName="userName">
-    <app-mensagem mensagem="Usuário deve ser em letras minúsculas" 
+    <app-mensagem mensagem="Usuário deve ser em letras minúsculas"
     *ngIf="novoUsuarioForm.get('userName')?.errors?.minusculo && novoUsuarioForm.get('userName')?.touched"></app-mensagem>
-    <app-mensagem mensagem="Usuário já existe" 
+    <app-mensagem mensagem="Usuário já existe"
     *ngIf="novoUsuarioForm.get('userName')?.errors?.usuarioExistente"></app-mensagem>
   </div>
 
   <div class="form-group">
     <input type="password" placeholder="Senha" name="senha" id="senha" class="form-control" formControlName="password">
+    <app-mensagem mensagem="Senha deve ser diferente do usúario" *ngIf="novoUsuarioForm.errors?.senhaIgualUsuario">
+
+    </app-mensagem>
   </div>
 
   <button class="btn btn-primary btn-block">Cadastro</button>

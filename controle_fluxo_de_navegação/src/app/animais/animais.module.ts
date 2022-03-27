@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MensagemModule } from './../componentes/mensagem/mensagem.module';
 import { CartaoModule } from './../componentes/cartao/cartao.module';
@@ -18,8 +19,7 @@ import { ComentariosComponent } from './detalhe-animal/comentarios/comentarios.c
     CommonModule,
     AnimaisRoutingModule,
     CartaoModule,
-    MensagemModule,
-    ReactiveFormsModule
+    SharedModule
   ]
 })
 export class AnimaisModule { }
